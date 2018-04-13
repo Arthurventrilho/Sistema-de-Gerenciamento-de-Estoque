@@ -22,7 +22,7 @@ Comando = int(input('Digite um numero: '))
 Estoque = {} 
 
 #Ciclo para adicionar produtos e quantidades no Dicionário
-while Comando < 6:
+while Comando < 5 and Comando >= 0:
 
     #Sair e parar o ciclo
     if Comando == 0:   
