@@ -58,12 +58,12 @@ while Comando < 5 and Comando >= 0:
             print('') 
             
             #Verifica se o preco é negativo ou positivo
-            preco = float(input('Digite o preco do produto: '))
-            while preco <= 0:
+            Preco = float(input('Digite o preco do produto: '))
+            while Preco <= 0:
                 print('Preco inicial tem que ser maior que zero')
-                preco = float(input('Digite o preco do produto: '))
+                Preco = float(input('Digite o preco do produto: '))
                 
-            Estoque[Nome_produto] = {'Quantidade': Quantidade_inicial, 'preco': preco}
+            Estoque[Nome_produto] = {'Quantidade': Quantidade_inicial, 'Preco': Preco}
                 
     #Remover item            
     elif Comando == 2:
@@ -79,12 +79,48 @@ while Comando < 5 and Comando >= 0:
     elif Comando == 3:
         Nome_produto = input('Digite o nome do produto: ') 
         
-        #Verifica se o produto está no Dicionario
+         #Verifica se o produto está no Dicionario
         if Nome_produto in Estoque:
-            Quantidade = int(input('Digite a quantidade do produto: '))
-            Estoque[Nome_produto]['Quantidade'] += Quantidade
-            print('Novo estoque de {0}: {1}'.format(Nome_produto,
-              Estoque[Nome_produto]['Quantidade']))
+        
+            print('')
+            print('Controle Produto')
+            print('0 - Sair')
+            print('1 - Alterar Quantidade ')
+            print('2 - Alterar Preco')
+            print('3 - Alterar Quantidade e Preco')
+            
+            Escolha = int(input('Digite a sua escolha: '))
+        
+            while Escolha not in [0, 1, 2 ,3]:
+                print('Escolha invalida')
+                Escolha = int(input('Digite a sua escolha: '))
+                 
+            if Escolha == 0:
+                print('Até Mais!')
+                break
+                
+            if Escolha == 1:
+                Quantidade = int(input('Digite a quantidade do produto: '))
+                
+                Estoque[Nome_produto]['Quantidade'] += Quantidade
+                print('Novo estoque de {0}: {1}'.format(Nome_produto,
+                Estoque[Nome_produto]['Quantidade']))
+            
+            if Escolha == 2:
+                Preco = float((input('Digite o preco do produto: ')))
+                Estoque[Nome_produto]['Preco'] += Preco
+                print('Novo estoque de {0}: {1}'.format(Nome_produto,
+                Estoque[Nome_produto]['Preco']))
+            
+            if Escolha == 3: 
+                Quantidade = int(input('Digite a quantidade do produto: '))
+                Preco = float((input('Digite o preco do produto: ')))
+                Estoque[Nome_produto]['Quantidade'] += Quantidade
+                Estoque[Nome_produto]['Preco'] += Preco
+                print('Novo estoque de {0} : a quantidade é {1} e custa {2}'.
+                      format(Nome_produto, Estoque[Nome_produto]['Quantidade'],
+                             Estoque[Nome_produto]['Preco'])) 
+            
         else:
             print('Produto não encontrado')
             
