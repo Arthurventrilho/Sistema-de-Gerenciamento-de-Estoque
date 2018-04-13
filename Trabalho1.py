@@ -21,6 +21,17 @@ Comando = int(input('Digite um numero: '))
 #Dicionario
 Estoque = {} 
 
+while Comando not in [0, 1, 2, 3, 4]:
+    print(' Comando invalido' )
+    print('')
+    print('Controle Estoque')
+    print('0 - Sair')
+    print('1 - Adicionar item')
+    print('2 - Remover item')
+    print('3 - Alterar item')
+    print('4 - Imprimir estoque')
+    Comando = int(input('Digite um numero: '))
+
 #Ciclo para adicionar produtos e quantidades no Dicionário
 while Comando < 5 and Comando >= 0:
 
@@ -87,7 +98,7 @@ while Comando < 5 and Comando >= 0:
     #Comandos
     Comando = int(input('Digite um numero: '))        
         
-        
+    
         
         
         
