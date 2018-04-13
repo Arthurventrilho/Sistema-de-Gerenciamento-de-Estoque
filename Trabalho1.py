@@ -55,9 +55,12 @@ while Comando < 5 and Comando >= 0:
                 print('Quantidade inicial não pode ser negativa')
                 Quantidade_inicial = int(input('Digite a quantidade do produto: '))
                 
+            print('') 
+            
+            #Verifica se o preco é negativo ou positivo
             preco = float(input('Digite o preco do produto: '))
             while preco <= 0:
-                print('Preco inicial não pode ser negativo')
+                print('Preco inicial tem que ser maior que zero')
                 preco = float(input('Digite o preco do produto: '))
                 
             Estoque[Nome_produto] = {'Quantidade': Quantidade_inicial, 'preco': preco}
