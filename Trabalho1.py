@@ -126,9 +126,44 @@ while Comando < 5 and Comando >= 0:
             
     #Imprimir Dicionario e parar o ciclo   
     elif Comando == 4:
-        for e in Estoque:
-            print('{0}:{1}'.format(e, Estoque[e]['Quantidade']))
+        
+        if Estoque == {}:
+            print('Seu estoque está vazio!')
             
+        else:
+            print('')
+            print('Impressao')
+            print('0 - Sair')
+            print('1 - Imprimir Valor monetário')
+            print('2 - Imprimir Quantidade e Preco')
+            
+            
+            Tipo_impressao = int(input('Faça sua escolha: '))
+            
+            while Tipo_impressao not in [0, 1, 2, 3]:
+                print('Tipo de impressão inválido')
+                Tipo_impressao = int(input('Faça sua escolha: '))
+            
+            if Tipo_impressao == 0:
+                print('Até mais')
+                break
+            
+            if Tipo_impressao == 1:
+                valor_monetario = 0.0
+                for g in Estoque:
+                    valor_monetario += Estoque[g]['Quantidade']*Estoque[g]['Preco']
+                print('O valor monetário do estoque é de R${0}'.format(valor_monetario))
+                
+            if Tipo_impressao == 2: 
+                for e in Estoque:
+                    print('{0}: {1}, {2}'.format(e, Estoque[e]['Quantidade'], 
+                          Estoque[e]['Preco']))
+            
+                for f in Estoque:
+                    if Estoque[f]['Quantidade'] < 0:
+                        print('Cuidado, estoque {0} está negativo'.format(f))
+                        
+                
     
     #Menu inicial
     print('')
