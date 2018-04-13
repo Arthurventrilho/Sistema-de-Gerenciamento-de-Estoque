@@ -40,12 +40,11 @@ while Comando < 6:
             Quantidade_inicial = int(input('Digite a quantidade do produto: '))
             
             #Verifica se a quantidade é negativa ou positiva
-            if Quantidade_inicial < 0:
+            while Quantidade_inicial < 0:
                 print('Quantidade inicial não pode ser negativa')
                 Quantidade_inicial = int(input('Digite a quantidade do produto: '))
-                Estoque[Nome_produto] = {'Quantidade': Quantidade_inicial}
-            else:
-                Estoque[Nome_produto] = {'Quantidade': Quantidade_inicial}
+            
+            Estoque[Nome_produto] = {'Quantidade': Quantidade_inicial}
                 
     #Remover item            
     elif Comando == 2:
