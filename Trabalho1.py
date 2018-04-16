@@ -5,8 +5,58 @@ Arthur e Gianlucca
 
 Exercício Programa: Sistema de Gerenciamento de Estoque
 """
+#Dicionario
+Estoque = {} 
+
+ativador = False
+
+print('Controle loja')
+print('0 - Sair') 
+print('1 - Adicionar loja')
+print('2 - Remover loja')
+print('3 - Entrar loja')
 
 
+Selecao = int(input('Insira um numero:'))
+
+while Selecao not in [0,1,2,3,4]:
+    print('Comando invalido')
+    print("")
+    print('Controle loja')
+    print('0 - Sair') 
+    print('1 - Adicionar loja')
+    print('2 - Remover loja')
+    print('3 - Entrar loja')
+    Selecao = int(input('Insira um numero:'))
+ 
+while Selecao >= 0 and Selecao <4:
+    
+    if Selecao == 0:
+        print('Até Mais!')
+        break
+
+    elif Selecao == 1:
+         Nome_loja = input('Digite o nome da loja:')
+         
+         while Nome_loja in Estoque:
+             print('Loja já cadastrada')
+             Nome_loja = input('Digite o nome da loja:')
+         Estoque[Nome_loja] = {}
+         ativador = True
+         
+    elif Selecao == 2:
+        if Estoque == {}:
+            print('Não existe loja no Estoque')
+            print('')
+            print('')
+        else:
+            print('Essas são as lojas no Estoque:')
+            for g in Estoque:
+                print(g)
+                Nome_loja = input('Digite o nome da loja:')
+            del Estoque[Nome_loja]
+            
+            
 #Menu inicial
 print('Controle Estoque')
 print('0 - Sair')
@@ -18,8 +68,7 @@ print('4 - Imprimir estoque')
 #Comandos
 Comando = int(input('Digite um numero: '))
 
-#Dicionario
-Estoque = {} 
+
 
 while Comando not in [0, 1, 2, 3, 4]:
     print(' Comando invalido' )
