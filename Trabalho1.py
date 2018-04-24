@@ -58,16 +58,14 @@ while tela_empresa:
         else:
             print('Essas são as lojas no Estoque:')
             for lojas in Estoque:
-                print()
                 print(lojas)
+            Nome_loja = input('Digite o nome da loja:')
+            if Nome_loja in Estoque:
+                del Estoque[Nome_loja]
+            else:
                 print()
-                Nome_loja = input('Digite o nome da loja:')
-                if Nome_loja in Estoque:
-                    del Estoque[Nome_loja]
-                else:
-                    print()
-                    print('Comando invalido')
-                    print()
+                print('Comando invalido')
+                print()
                     
     elif Selecao == 3:
         if Estoque == {}:
