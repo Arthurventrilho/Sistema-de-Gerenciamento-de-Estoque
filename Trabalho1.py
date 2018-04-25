@@ -16,6 +16,7 @@ tela_empresa = True
  
 while tela_empresa:
     
+    print()
     print('Controle loja')
     print('0 - Sair') 
     print('1 - Adicionar loja')
@@ -43,7 +44,6 @@ while tela_empresa:
          Nome_loja = input('Digite o nome da loja:')
          
          while Nome_loja in Estoque:
-             print()
              print('Loja já cadastrada')
              print()
              Nome_loja = input('Digite o nome da loja:')
@@ -75,7 +75,6 @@ while tela_empresa:
         else:
             print()
             print('Essas sao as lojas:')
-            print()
             for lojas in Estoque:
                 print('{0}'.format(lojas))
 
@@ -94,7 +93,6 @@ while tela_empresa:
             while tela_loja:
     
                 #Menu inicial
-                print("")
                 print("")
                 print('Controle Estoque')
                 print('0 - Voltar as lojas')
@@ -146,11 +144,9 @@ while tela_empresa:
                             print()
                             
                         #Verifica se o preco é negativo ou positivo
-                        print()
                         Preco = float(input('Digite o preco do produto: '))
                         print()
                         while Preco <= 0:
-                            print()
                             print('Preco inicial tem que ser maior que zero')
                             Preco = float(input('Digite o preco do produto: '))
                             print()
@@ -219,8 +215,6 @@ while tela_empresa:
                             if Escolha == 0:
                                 print()
                                 
-                                
-                    
                             if Escolha == 1:
                                 Quantidade = int(input('Digite a quantidade do produto: '))
                     
@@ -265,7 +259,7 @@ while tela_empresa:
                     else:
                         print('')
                         print('Impressao')
-                        print('0 - Sair')
+                        print('0 - Voltar')
                         print('1 - Imprimir Valor monetário')
                         print('2 - Imprimir Quantidade e Preco')
                         print()
@@ -281,10 +275,7 @@ while tela_empresa:
                 
                         if Tipo_impressao == 0:
                             print()
-                            print('Até mais')
-                            print()
-                            break
-                
+                           
                         if Tipo_impressao == 1:
                             valor_monetario = 0.0
                             for g in Estoque[Nome_loja]:

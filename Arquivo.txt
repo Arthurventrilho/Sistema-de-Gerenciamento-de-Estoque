@@ -1,1 +1,1 @@
-{}
+{"a": {}, "flor": {"girasol": {"Quantidade": -68, "Preco": 2.0}}}
