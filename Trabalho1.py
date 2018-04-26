@@ -28,6 +28,8 @@ while tela_empresa:
     while Selecao not in [0,1,2,3]:
         print('Comando invalido')
         print()
+        print(20*'<>')
+        print()
         print('Controle loja')
         print('0 - Sair') 
         print('1 - Adicionar loja')
@@ -46,6 +48,7 @@ while tela_empresa:
          while Nome_loja in Estoque:
              print('Loja já cadastrada')
              print()
+             print(20*'<>')
              Nome_loja = input('Digite o nome da loja:')
              
          Estoque[Nome_loja] = {}
@@ -53,8 +56,10 @@ while tela_empresa:
     elif Selecao == 2:
         if Estoque == {}:
             print()
-            print('Não existe loja no Estoque')
+            print('Não existem lojas no Estoque')
             print()
+            print(20*'<>')
+
         else:
             print('Essas são as lojas no Estoque:')
             for lojas in Estoque:
@@ -66,12 +71,14 @@ while tela_empresa:
                 print()
                 print('Comando invalido')
                 print()
+                print(20*'<>')
                     
     elif Selecao == 3:
         if Estoque == {}:
             print()
             print('Não existem lojas no Estoque')
             print()
+            print(20*'<>')
         else:
             print()
             print('Essas sao as lojas:')
@@ -84,6 +91,7 @@ while tela_empresa:
                 print()
                 print('loja inexistente')
                 print()
+                print(20*'<>')
                 Nome_loja = input('escolha uma loja:')
 
 
@@ -100,20 +108,22 @@ while tela_empresa:
                 print('2 - Remover item')
                 print('3 - Alterar item')
                 print('4 - Imprimir estoque')
-                print()
+                
                 #Comandos
                 Comando = int(input('Digite um numero: '))
             
                 while Comando not in [0, 1, 2, 3, 4]:
-                    print(' Comando invalido' )
-                    print('')
+                    print()
+                    print('Comando invalido' )
+                    print()
+                    print(20*'<>')
+                    print()
                     print('Controle Estoque')
                     print('0 - Voltar as lojas')
                     print('1 - Adicionar item')
                     print('2 - Remover item')
                     print('3 - Alterar item')
                     print('4 - Imprimir estoque')
-                    print()
                     Comando = int(input('Digite um numero: '))
 
                 #Sair e parar o ciclo
@@ -123,45 +133,42 @@ while tela_empresa:
         
                 #Adicionar item
                 elif Comando == 1:
-                    print()
                     Nome_produto = input('Digite o nome do produto: ')
-                    print()
             
             #Verifica se o produto está no Dicionario
                     if Nome_produto in Estoque[Nome_loja]:
-                        print()
                         print('Produto já cadastrado')
                         print()
-                    else: 
+                        print(20*'<>')
+                    else:
+                        print()
                         Quantidade_inicial = int(input('Digite a quantidade do produto: '))
                 
                         #Verifica se a quantidade é negativa ou positiva
                         while Quantidade_inicial <= 0:
-                            print()
-                            print('Quantidade inicial não pode ser negativa')
-                            print()
+                            print('Quantidade inicial tem que ser maior que zero')
                             Quantidade_inicial = int(input('Digite a quantidade do produto: '))
-                            print()
+                        print()
                             
                         #Verifica se o preco é negativo ou positivo
                         Preco = float(input('Digite o preco do produto: '))
-                        print()
                         while Preco <= 0:
                             print('Preco inicial tem que ser maior que zero')
                             Preco = float(input('Digite o preco do produto: '))
-                            print()
+                        print() 
+                        print(20*'<>')    
                         Estoque[Nome_loja][Nome_produto] = {'Quantidade': Quantidade_inicial, 'Preco': Preco}
                     
                 #Remover item            
                 elif Comando == 2:
-                    if len(Estoque[Nome_loja]) == {}:
+                    if Estoque[Nome_loja] == {}:
                         print()
                         print('Nao ha produtos')
-                        print('')
+                        print()
+                        print(20*'<>')
                     else:
                         print()
                         print('Esses são os produtos da loja: ')
-                        print()
                         for produtos in Estoque[Nome_loja]:
                             print(produtos)
                         Nome_produto = input('Digite o nome do produto: ')
@@ -171,26 +178,31 @@ while tela_empresa:
                             del Estoque[Nome_loja][Nome_produto]
                             print()
                             print('Estoque atualizado')
+                            print()
+                            print(20*'<>')
+                            
                         else:
                             print()
                             print('Produto não encontrado')
                             print()
+                            print(20*'<>')
                         
                         print()
                 #Alterar item    
                 elif Comando == 3:
-                    if len(Estoque[Nome_loja]) == 0:
+                    if Estoque[Nome_loja] == {}:
                         print()
                         print('Não há produtos')
-                        print('')
-                        ativador = False
+                        print()
+                        print(20*'<>')
+                        
                         
                     else:
                         print()
                         print('Esses são os produtos da loja: ')
                         for produtos in Estoque[Nome_loja]:
                             print(produtos)
-                            print()
+                        print()
                         
                         Nome_produto = input('Digite o nome do produto: ') 
             
@@ -210,10 +222,13 @@ while tela_empresa:
                             while Escolha not in [0, 1, 2 ,3]:
                                 print()
                                 print('Escolha invalida')
+                                print()
+                                print(20*'<>')
                                 Escolha = int(input('Digite a sua escolha: '))
                      
                             if Escolha == 0:
                                 print()
+                                print(20*'<>')
                                 
                             if Escolha == 1:
                                 Quantidade = int(input('Digite a quantidade do produto: '))
@@ -223,6 +238,7 @@ while tela_empresa:
                                 print('Novo estoque de {0}: {1}'.format(Nome_produto,
                                 Estoque[Nome_loja][Nome_produto]['Quantidade']))
                                 print()
+                                print(20*'<>')
                 
                             if Escolha == 2:
                                 Preco = float((input('Digite o preco do produto: ')))
@@ -231,6 +247,7 @@ while tela_empresa:
                                 print('Valor de {0} alterado para: R${1:.2f}'.format(Nome_produto,
                                 Estoque[Nome_loja][Nome_produto]['Preco']))
                                 print()
+                                print(20*'<>')
                 
                             if Escolha == 3: 
                                 Quantidade = int(input('Digite a quantidade do produto: '))
@@ -242,11 +259,13 @@ while tela_empresa:
                                 format(Nome_produto, Estoque[Nome_loja][Nome_produto]['Quantidade'],
                                 Estoque[Nome_loja][Nome_produto]['Preco'])) 
                                 print()
+                                print(20*'<>')
                 
                         else:
                             print()
                             print('Produto não encontrado')
                             print()
+                            print(20*'<>')
                     
                 
                 #Imprimir Dicionario e parar o ciclo   
@@ -255,9 +274,10 @@ while tela_empresa:
                     if Estoque == {}:
                         print('Seu estoque está vazio!')
                         print()
+                        print(20*'<>')
                 
                     else:
-                        print('')
+                        print()
                         print('Impressao')
                         print('0 - Voltar')
                         print('1 - Imprimir Valor monetário')
@@ -271,10 +291,13 @@ while tela_empresa:
                             print()
                             print('Tipo de impressão inválido')
                             print()
+                            print(20*'<>')
+                            print()
                             Tipo_impressao = int(input('Faça sua escolha: '))
                 
                         if Tipo_impressao == 0:
                             print()
+                            print(20*'<>')
                            
                         if Tipo_impressao == 1:
                             valor_monetario = 0.0
@@ -283,18 +306,21 @@ while tela_empresa:
                             print()
                             print('O valor monetário do estoque é de R${0}'.format(valor_monetario))
                             print()
+                            print(20*'<>')
                     
                         if Tipo_impressao == 2: 
                             for e in Estoque[Nome_loja]:
                                 print()
                                 print('{0}: Quantidade: {1}, Preco {2}'.format(e, Estoque[Nome_loja][e]['Quantidade'], Estoque[Nome_loja][e]['Preco']))
                                 print()
+        
                                 
                             for f in Estoque[Nome_loja]:
                                 if Estoque[Nome_loja][f]['Quantidade'] < 0:
                                     print()
                                     print('Cuidado, estoque de {0} está negativo'.format(f))
                                     print()
+                            print(20*'<>')
         
 with open("Arquivo.txt",'w') as arquivo:
     conteudo = json.dumps(Estoque)
